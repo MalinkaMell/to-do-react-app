@@ -4,7 +4,7 @@ import TodoButton from "./TodoButton";
 const TodoAdd = props => {
   return (
     <React.Fragment>
-      <form className="w-100">
+      <form className="w-100 mx-2">
         <div className="input-group mb-3">
           <input className="form-control"
             type="text"

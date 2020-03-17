@@ -4,7 +4,7 @@ import TodoButton from "./TodoButton";
 const TodoItem = props => {
   return (
     <React.Fragment>
-      <div className="input-group mb-3" key={props.todo.id}>
+      <div className="input-group mb-3 mx-2" key={props.todo.id}>
         <div className="input-group-prepend">
           <div className="input-group-text">
             <input

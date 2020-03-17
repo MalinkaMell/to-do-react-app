@@ -56,7 +56,7 @@ const App = () => {
         <Title />
       </Row>
       <Row className="justify-content-center">
-        <Col md={6} className="jumbotron">
+        <Col md={6} className="jumbotron mx-2">
           <Row>
             <TodoAdd
               newtodo={todo}
