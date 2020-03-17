@@ -20,7 +20,7 @@ const TodoAdd = props => {
               clickHandler={props.submitHandler}
               type="submit"
               value="✓"
-              class="btn btn-warning"
+              class="btn btn-add"
             />
           </div>
         </div>

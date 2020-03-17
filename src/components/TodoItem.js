@@ -16,10 +16,17 @@ const TodoItem = props => {
           </div>
         </div>
         <input type="text"
-          className={"form-control bg-light " + (props.todo.completed ? "completed " : "uncompleted")}
+          className={"form-control " + (props.todo.completed ? "completed " : "uncompleted")}
           disabled value={props.todo.title} />
         <div className="input-group-append" >
-          <TodoButton todo={props.todo} clickHandler={props.deleteHandler} type="button" value="✗" class="btn btn-danger" />
+          <TodoButton
+            todo={props.todo}
+            clickHandler={props.deleteHandler}
+            type="button"
+            value="✗"
+            class="btn btn-delete"
+            args={[props.todo.id]}
+             />
         </div>
       </div>
     </React.Fragment>

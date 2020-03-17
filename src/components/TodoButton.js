@@ -7,7 +7,7 @@ const TodoButton = props => {
             type={props.type}
             className={props.class}
             value={props.value}
-            onClick={e => props.value === "✗" ? props.clickHandler(props.todo.id, e) : props.clickHandler(e)}
+            onClick={e => props.args ? props.clickHandler(...props.args, e) : props.clickHandler(e)}
           />
     </React.Fragment>
   );

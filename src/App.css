@@ -5,3 +5,67 @@
 .uncompleted {
   text-decoration: none;
 }
+
+body {
+  background: #121212;
+  color: #b5abb6;
+}
+
+.title {
+  text-shadow: 2px 2px #705d72;
+}
+
+.jumbotron {
+  background-color: #431c53;
+  border-radius: .3rem;
+  box-shadow: 0 0 2px 2px #705d72;
+}
+
+.form-control {
+  color: #b5abb6;
+  background-color: #121212;
+  border: 1px solid #b5abb6;
+}
+
+.form-control:focus {
+  color: #121212;
+  background-color: #b5abb6;
+  border-color: #431c53;
+  outline: 0;
+  box-shadow: 0 0 0 1px #705d72;
+}
+
+.input-group-text {
+  background-color: #121212;
+  border: 1px solid #b5abb6;
+}
+
+.form-control[readonly], .form-control:disabled {
+  background-color: #705d72;
+  color: #d9d4da;
+  opacity: 1;
+}
+
+.btn-add {
+  color: #212529;
+  background-color: #b5abb6;
+  border-color: #b5abb6;
+}
+
+.btn-add:hover {
+  color: #d9d4da;
+  background-color: #121212;
+  border-color: #b5abb6;
+}
+
+.btn-delete {
+  color: #d9d4da;
+  background-color: #121212;
+  border-color: #b5abb6;
+}
+
+.btn-delete:hover {
+  color: #121212;
+  background-color: #705d72;
+  border-color: #b5abb6;
+}
