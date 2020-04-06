@@ -5,11 +5,14 @@ import todos from "./todos.json";
 import TodoList from "./components/TodoList";
 import TodoAdd from "./components/TodoAdd";
 import Title from "./components/Title";
+import SelectTodos from "./components/SelectTodos";
 
 const App = () => {
 
   const [todo, setTodo] = useState("");
   const [list, setList] = useState(todos);
+  const [filter, setFilter] = useState("all");
+  const [deleted, setDeleted] = useState([]);
   const todoInput = useRef(null);
 
   const switchCheckbox = (id, e) => {
@@ -25,6 +28,7 @@ const App = () => {
 
   const deleteHandler = (id, e) => {
     e.preventDefault();
+    setDeleted([...deleted, id]);
     setList(list.filter(item => item.id !== id))
   }
 
@@ -34,9 +38,9 @@ const App = () => {
 
   const submitHandler = e => {
     e.preventDefault();
-    const newItemId = list.length;
+    const newItemId = list.length + 1;
     const newTodo = {
-      id: newItemId + 1,
+      id: newItemId,
       title: todo,
       completed: false
     };
@@ -50,6 +54,21 @@ const App = () => {
     todoInput.current.focus();
   }
 
+  const selectHandler = e => {
+    const { value } = e.target;
+    switch (value) {
+      case "completed":
+        setFilter("completed");
+        return setList(todos.filter(item => deleted.indexOf(item.id) === -1 && item.completed));
+      case "uncompleted":
+        setFilter("uncompleted")
+        return setList(todos.filter(item => deleted.indexOf(item.id) === -1 && !item.completed));
+      default:
+        setFilter("all")
+        return setList(todos.filter(item => deleted.indexOf(item.id) === -1 && item));
+    }
+  }
+
   return (
     <Container>
       <Row className="justify-content-center my-2">
@@ -57,6 +76,9 @@ const App = () => {
       </Row>
       <Row className="justify-content-center">
         <Col md={6} className="jumbotron mx-2">
+          <Row>
+            <SelectTodos filter={filter} selectHandler={selectHandler} />
+          </Row>
           <Row>
             <TodoAdd
               newtodo={todo}

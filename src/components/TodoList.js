@@ -6,7 +6,7 @@ const TodoList = props => {
     <React.Fragment>
       {props.todos.map(todo =>
         <TodoItem
-          key={todo.id}
+          key={todo.id + todo.title}
           todo={todo}
           switchCheckbox={props.switchCheckbox}
           deleteHandler={props.deleteHandler}
